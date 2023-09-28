@@ -1,6 +1,6 @@
 # Aung Ye Zaw
 
-![Profile Picture](https://media.licdn.com/dms/image/D5603AQH2Giz6C1Sw1w/profile-displayphoto-shrink_200_200/0/1680110607784?e=1701302400&v=beta&t=i1CGzkVAPJrGhQbn9jSweV5a0CKo_qsoI4Yu3HFqX8c)
+![Profile Picture](https://bit.ly/aungyezaw_photo)
 
 I'm a passionate Flutter developer with over 3 years of experience in the field. Currently working at [Myanmar Information Technology (MIT) Company](https://www.mit.com.mm/) since March 1st, 2023. I have a background in Engineering of Electronics and Communication, and I'm currently learning Artificial Intelligence and Machine Learning using Python.
 
