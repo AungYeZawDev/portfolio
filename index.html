@@ -1,57 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aung Ye Zaw - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <base href="./">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content=" ">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="QR Menu">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <title>QR Menu</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "537276888";
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
 </head>
+<style>
+  /* Additional styles for the app container */
+  .app-container {
+    display: none;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    /* Set your desired background color */
+  }
+
+  /* Styles for the centered QR MENU text */
+  .qr-menu-text {
+    font-size: 48px;
+    font-weight: bold;
+    color: #912F40;
+    /* Dark teal color */
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: scale(0.8);
+    font-family: 'Roboto', sans-serif;
+    animation: text-fade-scale 2s cubic-bezier(0.3, 0.2, 0.1, 1) infinite;
+  }
+
+  @keyframes text-fade-scale {
+
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+
 <body>
-    <header>
-        <nav>
-            <div class="logo">Aung Ye Zaw</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="hero">
-        <!-- Add a beautiful space background image here -->
-        <div class="content">
-            <h1>Welcome to my Portfolio</h1>
-            <p>Flutter Developer | AI Enthusiast</p>
-        </div>
-    </section>
-    <section id="about">
-        <div class="content">
-            <h2>About Me</h2>
-            <p>Your brief introduction here...</p>
-        </div>
-    </section>
-    <section id="experience">
-        <div class="content">
-            <h2>Experience</h2>
-            <p>Your work experience and details here...</p>
-        </div>
-    </section>
-    <section id="projects">
-        <div class="content">
-            <h2>Projects</h2>
-            <p>Descriptions of your projects here...</p>
-        </div>
-    </section>
-    <section id="contact">
-        <div class="content">
-            <h2>Contact Me</h2>
-            <p>Your contact information here...</p>
-        </div>
-    </section>
-    <footer>
-        <p>&copy; 2023 Aung Ye Zaw</p>
-    </footer>
-    <script src="script.js"></script>
+  <div id="loader" class="app-container">
+    <div class="qr-menu-text">QR MENU</div>
+  </div>
+  <!-- Scripts -->
+  <script src="main.dart.js" type="application/javascript"
+    onendload="document.getElementById('loader').remove();"></script>
+  <script>
+    window.addEventListener('load', function (ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function (engineInitializer) {
+          document.querySelector('.qr-menu-text').style.display = 'none';
+          document.querySelector('.app-container').style.display = 'block';
+          engineInitializer.initializeEngine().then(function (appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
